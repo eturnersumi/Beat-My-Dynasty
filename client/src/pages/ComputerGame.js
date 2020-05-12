@@ -3,6 +3,10 @@ import Nav2 from "../components/Nav2";
 
 
 function ComputerGame() {
+
+
+
+  
   return(
     <div>
     <h1>This is the Computer Game Page!</h1>
