@@ -12,8 +12,7 @@ import SignUp from "./pages/SignUp";
 function App() {
   return (
     <Router>
-      <div>
-        
+      <div className="wrapper">
           <Route exact path={["/", "/home"]}>
             <Home />
           </Route>

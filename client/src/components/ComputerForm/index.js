@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import API from "../../utils/API";
+import "./style.css";
 
 
 function ComputerForm() {
@@ -44,7 +45,7 @@ const [teams, setTeams] = useState([])
     </div>
     
     <div className="box" >
-      <h2 className="card-title">Team One &emsp;</h2>
+      <h2 className="card-title">Your Team &emsp;</h2>
       <img className="card-img-top" src="" alt="teamOne" />
       <p>
         team #1 name 
@@ -57,13 +58,15 @@ const [teams, setTeams] = useState([])
     </div>
     
     <div className="box">
-      <h2 className="card-title">Team Two &emsp;</h2>
+      <h2 className="card-title">Computer's Team &emsp;</h2>
       <img className="card-img-top" src="" alt="teamTwo" />
       <p>
         team #2 name
       </p>
     </div>
     <div className="btn">
+    <br />
+    <br />
     <button
     onClick={generateTeams}
     >

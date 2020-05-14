@@ -50,10 +50,11 @@ function ManualForm() {
 
 
  return(
-   <div>
+   <div className="wrapper">
      <div className="row">
-       <div className="col-sm-6">
-         <form>
+       <div className="col-sm-3">
+        <h3>Team #1 </h3>
+         <form className="pickOne">
            <select 
            onChange={selectTeam}
            id="pickOne">
@@ -66,23 +67,31 @@ function ManualForm() {
              ))}
            </select>
          </form>
+         <br />
+         <br />
+         <h3>Team #2 </h3>
+         <form className="pickTwo">
+         <select 
+         onChange={selectTeam}
+         id="pickTwo" name="pickTwo">
+         {teams.map(team => (
+             <option value key={team._id}>
+             {team.team}
+             </option>
+           ))}
+         </select>
+       </form>
+         
        </div>
-       <div className="col-sm-6">
-       <form>
-       <select 
-       onChange={selectTeam}
-       id="pickTwo" name="pickTwo">
-       {teams.map(team => (
-           <option value key={team._id}>
-           {team.team}
-           </option>
-         ))}
-       </select>
-     </form>
+       <div>
+       <br />
+       <br />
+       <br />
+       <br />
+       <button className="bttn">GAME TIME!</button>
        </div>
+      
      </div>
-     <button>Submit</button>
-     
    </div>
  )
 };

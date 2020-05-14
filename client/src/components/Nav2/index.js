@@ -26,7 +26,18 @@ function Nav2() {
                 : "nav-link"
               }
               >
-              Start Playing
+              Manual Simulation
+              </Link>
+          </li>
+          <li>
+            <Link
+              to="/computer"
+              className={window.location.pathname === "/computer"
+                ? "nav-link active"
+                : "nav-link"
+              }
+              >
+              Computer Simulation
               </Link>
           </li>
         </ul>
