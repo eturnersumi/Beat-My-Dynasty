@@ -6,7 +6,8 @@ import "./style.css";
 function ManualForm() {
  //setting initial state
  const [teams, setTeams] = useState([])
- const [chosenTeam, setChosenTeam] = useState([])
+ const [chosenTeamOne, setChosenTeamOne] = useState("")
+ const [chosenTeamTwo, setChosenTeamTwo] = useState("")
 
  //load all teams and store with setTeams
  useEffect(() => {
@@ -16,26 +17,40 @@ function ManualForm() {
  //load all teams and set to teams
  function loadTeams() {
    API.getTeams()
-     .then(res =>
+     .then(res =>{
        setTeams(res.data)
+
+      //set starting value to shown value for team 1 and 2
+       setChosenTeamOne(res.data[0].team)
+       setChosenTeamTwo(res.data[0].team)
+     }
        )
        .catch(err => console.log(err));
  }
 
  
+//  useEffect(() => {
+//    selectTeam()
+//  }, [])
+
+
  useEffect(() => {
-   selectTeam()
- }, [])
+console.log("1: ", chosenTeamOne)
+}, [chosenTeamOne])
 
+useEffect(() => {
+  console.log("2: ", chosenTeamTwo)
+  }, [chosenTeamTwo])
 
- function selectTeam() {
-   //console.log(e.target)
-   // API.getTeam(id)
-   //   .then(res =>
-   //     setChosenTeam(res.data)
-   //     )
-   //     .catch(err => console.log(err));
- }
+//  function selectTeam(e) {
+//    console.log("Select team function: ", e)
+   
+//    // API.getTeam(id)
+//    //   .then(res =>
+//    //     setChosenTeam(res.data)
+//    //     )
+//    //     .catch(err => console.log(err));
+//  }
 
  // function handlePick(e) {
    
@@ -56,12 +71,15 @@ function ManualForm() {
         <h3>Team #1 </h3>
          <form className="pickOne">
            <select 
-           onChange={selectTeam}
+           value={chosenTeamOne}
+           onChange={e=>setChosenTeamOne(e.target.value)}
+
            id="pickOne">
            {teams.map(team => (
                <option 
                key={team._id} 
-               value id={team.team}>
+               value={team.team}
+               id={team.team}>
                {team.team}
                </option>
              ))}
@@ -72,10 +90,17 @@ function ManualForm() {
          <h3>Team #2 </h3>
          <form className="pickTwo">
          <select 
-         onChange={selectTeam}
-         id="pickTwo" name="pickTwo">
+         value={chosenTeamTwo}
+          onChange={e=>setChosenTeamTwo(e.target.value)}
+
+       
+         id="pickTwo">
          {teams.map(team => (
-             <option value key={team._id}>
+             <option 
+             key={team._id}
+             value={team.team}
+             id={team.team}
+             >
              {team.team}
              </option>
            ))}
@@ -88,7 +113,7 @@ function ManualForm() {
        <br />
        <br />
        <br />
-       <button className="bttn">GAME TIME!</button>
+       <button className="btn">GAME TIME</button>
        </div>
       
      </div>
