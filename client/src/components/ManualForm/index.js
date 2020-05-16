@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import "./style.css";
 
@@ -6,8 +7,8 @@ import "./style.css";
 function ManualForm() {
  //setting initial state
  const [teams, setTeams] = useState([])
- const [chosenTeamOne, setChosenTeamOne] = useState("")
- const [chosenTeamTwo, setChosenTeamTwo] = useState("")
+ const [chosenTeamOne, setChosenTeamOne] = useState({})
+ const [chosenTeamTwo, setChosenTeamTwo] = useState({})
 
  //load all teams and store with setTeams
  useEffect(() => {
@@ -23,44 +24,102 @@ function ManualForm() {
       //set starting value to shown value for team 1 and 2
        setChosenTeamOne(res.data[0].team)
        setChosenTeamTwo(res.data[0].team)
+       teamHandler(res.data)
      }
        )
        .catch(err => console.log(err));
  }
 
- 
-//  useEffect(() => {
-//    selectTeam()
-//  }, [])
-
-
  useEffect(() => {
 console.log("1: ", chosenTeamOne)
+  teamHandler(chosenTeamOne)
 }, [chosenTeamOne])
 
 useEffect(() => {
   console.log("2: ", chosenTeamTwo)
+  teamHandler(chosenTeamTwo)
   }, [chosenTeamTwo])
 
-//  function selectTeam(e) {
-//    console.log("Select team function: ", e)
-   
-//    // API.getTeam(id)
-//    //   .then(res =>
-//    //     setChosenTeam(res.data)
-//    //     )
-//    //     .catch(err => console.log(err));
-//  }
 
- // function handlePick(e) {
-   
- //   console.log(e);
- //   console.log(e.currentTarget)
- //   console.log(e.currentTarget.value.id)
- //   // var result = e.options[e.selectedIndex].value;
- //   // var result = e.options[e.index].value;
- //   // console.log(result);
- // }
+  function teamHandler() {
+    let pick1=chosenTeamOne;
+    let pick2=chosenTeamTwo;
+    let teamList = teams;
+    let team1;
+    let team2;
+    if (JSON.stringify(pick1) === '{}' || JSON.stringify(pick2) === '{}') {
+      console.log("TEAM HANDLER SKIPPED")
+      return;
+    }
+    console.log("team handler function: ", "#1", pick1, "#2", pick2)
+    console.log("team handler function **teams: ", teamList)
+    
+    for (var i=0; i<teamList.length; i+=1) {
+      if (teamList[i].team === pick1){
+        team1=teamList[i];
+        console.log("***!!!Found team 1", team1)
+      }
+    }
+    for (var j=0; j<teamList.length; j+=1) {
+      if (teamList[j].team === pick2) {
+        team2=teamList[j];
+        console.log("***!!!Found team 2: ", team2)
+      }
+    }
+    calculateWinner(team1, team2);
+  }
+
+  function calculateWinner(team1, team2) {
+    if (JSON.stringify(team1) === '{}' || JSON.stringify(team2) === '{}') {
+      console.log("CALCULATE FUNCTION NOT RUNNING")
+      return;
+    }
+    else {
+    // console.log("calculate winner function", firstPick, secondPick)
+    console.log("calculate function team 1: ", team1)
+    console.log("calculate function team 2: ", team2)
+    // console.log("team 1 points: ", firstPick.statistics[0].points)
+    // console.log("team 1 assists: ", firstPick.statistics[0].assists)
+      // let team1=firstPick;
+      // let team2=secondPick;
+      let score1;
+      let score2;
+      let winner;
+      let loser;
+      let tie;
+
+      let stats1 = team1.statistics[0];
+      let stats2 = team2.statistics[0];
+
+      if (stats1.points > stats2.points) {
+        winner=team1.team;
+        loser=team2.team;
+        tie=false;
+        console.log("*******winner is: ", winner, " loser is: ", loser)
+      }
+      else if (stats2.points > stats1.points) {
+        winner=team2.team;
+        loser=team1.team;
+        tie=false;
+        console.log("********winner is: ", winner, " loser is: ", loser)
+      }
+      else {
+        tie=true;
+        winner="";
+        loser="";
+        console.log("********it's a tie!")
+      }
+      playGame(winner, loser, tie);
+      //console.log("winner is: ", winner, "loser is: ", loser)
+      return winner, loser, tie;
+  }
+  }
+
+  function playGame(win, lose, tie) {
+    //redirect to results page 
+    console.log("-------play game method: ", win, lose, tie)
+    return win, lose, tie;
+  }
 
 
 
@@ -113,7 +172,17 @@ useEffect(() => {
        <br />
        <br />
        <br />
-       <button className="btn">GAME TIME</button>
+       <button className="btn">
+       <Link
+        to="/results"
+        className={window.location.pathname === "/results"
+        ? "nav-link active"
+        : "nav-link"
+        }
+        >
+        GAME TIME
+        </Link>
+        </button>
        </div>
       
      </div>

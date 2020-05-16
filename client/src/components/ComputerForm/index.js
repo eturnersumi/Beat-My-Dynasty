@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import "./style.css";
 
@@ -33,28 +34,62 @@ const [teamTwo, setTeamTwo] = useState({});
     const firstPick = teams[Math.floor(Math.random()*teams.length)];
     const secondPick = teams[Math.floor(Math.random()*teams.length)];
     console.log("generate teams function", firstPick, secondPick)
-   // console.log("team1: ", e)
     setTeamOne(firstPick);
-   setTeamTwo(secondPick);
+    setTeamTwo(secondPick);
+   calculateWinner(firstPick, secondPick)
   }
 
-  function calculateWinner(firstPick, secondPick) {
-    if (JSON.stringify(firstPick) === '{}' || JSON.stringify(secondPick) === '{}') {
+  function calculateWinner(team1, team2) {
+    if (JSON.stringify(team1) === '{}' || JSON.stringify(team2) === '{}') {
+      console.log("CALCULATE FUNCTION NOT RUNNING")
       return;
     }
     else {
-    console.log("calculate winner function", firstPick, secondPick)
-    console.log("team 1 statistics", firstPick.statistics)
-    console.log("team 1 points: ", firstPick.statistics[0].points)
-    console.log("team 1 assists: ", firstPick.statistics[0].assists)
-    playGame();
+    // console.log("calculate winner function", firstPick, secondPick)
+    console.log("calculate function team 1: ", team1)
+    console.log("calculate function team 2: ", team2)
+    // console.log("team 1 points: ", firstPick.statistics[0].points)
+    // console.log("team 1 assists: ", firstPick.statistics[0].assists)
+      // let team1=firstPick;
+      // let team2=secondPick;
+      let score1;
+      let score2;
+      let winner;
+      let loser;
+      let tie;
+
+      let stats1 = team1.statistics[0];
+      let stats2 = team2.statistics[0];
+
+      if (stats1.points > stats2.points) {
+        winner=team1.team;
+        loser=team2.team;
+        tie=false;
+        console.log("*******winner is: ", winner, " loser is: ", loser)
+      }
+      else if (stats2.points > stats1.points) {
+        winner=team2.team;
+        loser=team1.team;
+        tie=false;
+        console.log("********winner is: ", winner, " loser is: ", loser)
+      }
+      else {
+        tie=true;
+        winner="";
+        loser="";
+        console.log("********it's a tie!")
+      }
+      playGame(winner, loser, tie);
+      //console.log("winner is: ", winner, "loser is: ", loser)
+      return winner, loser, tie;
   }
   }
 
 
-  function playGame() {
+  function playGame(win, lose, tie) {
     //redirect to results page 
-    console.log("play game method")
+    console.log("-------play game method: ", win, lose, tie)
+    return win, lose, tie;
   }
 
 
@@ -112,11 +147,19 @@ const [teamTwo, setTeamTwo] = useState({});
     </button>
     <br />
     <br />
+    
     <button
     className="play"
-    onClick={calculateWinner(teamOne, teamTwo)}
+    >
+    <Link
+    to="/results"
+    className={window.location.pathname === "/results"
+    ? "nav-link active"
+    : "nav-link"
+    }
     >
     GAME TIME
+    </Link>
     </button>
     </div>
     </div>

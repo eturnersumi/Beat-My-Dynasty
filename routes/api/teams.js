@@ -6,6 +6,13 @@ router.route("/")
   .get(teamsController.findAll)
   .post(teamsController.create);
 
+// Matches with "api/teams/:team"
+router
+.route("/:team")
+.get(teamsController.findByTeam)
+.put(teamsController.update)
+.delete(teamsController.remove)
+
 // Matches with "/api/teams/:id"
 router
   .route("/:id")
