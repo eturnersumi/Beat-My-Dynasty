@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import "./style.css";
@@ -8,6 +8,7 @@ function ComputerForm() {
 const [teams, setTeams] = useState([])
 const [teamOne, setTeamOne] = useState({})
 const [teamTwo, setTeamTwo] = useState({});
+let teamExport;
 
   useEffect(() => {
     setTeam()
@@ -17,6 +18,7 @@ const [teamTwo, setTeamTwo] = useState({});
     API.getTeams()
       .then(res =>{
         setTeams(res.data)
+        teamExport = res.data;
       }
         )
         .catch(err => console.log(err));
@@ -81,7 +83,7 @@ const [teamTwo, setTeamTwo] = useState({});
       }
       playGame(winner, loser, tie);
       //console.log("winner is: ", winner, "loser is: ", loser)
-      return winner, loser, tie;
+      return {winner, loser, tie};
   }
   }
 
@@ -89,7 +91,7 @@ const [teamTwo, setTeamTwo] = useState({});
   function playGame(win, lose, tie) {
     //redirect to results page 
     console.log("-------play game method: ", win, lose, tie)
-    return win, lose, tie;
+    return {win, lose, tie};
   }
 
 
@@ -152,7 +154,12 @@ const [teamTwo, setTeamTwo] = useState({});
     className="play"
     >
     <Link
-    to="/results"
+    to={{
+      pathname: "/results",
+      data: teamExport
+    }}
+    
+    
     className={window.location.pathname === "/results"
     ? "nav-link active"
     : "nav-link"
