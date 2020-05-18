@@ -6,8 +6,8 @@ function Nav2() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div>
-        <ul>
-          <li>
+        <ul className="navbar-nav">
+          <li className="nav-item">
             <Link
               to="/profile"
               className={window.location.pathname === "/profile"
@@ -18,7 +18,7 @@ function Nav2() {
               Profile
               </Link>
           </li>
-          <li>
+          <li className="nav-item">
             <Link
               to="/manual"
               className={window.location.pathname === "/manual"
@@ -29,7 +29,7 @@ function Nav2() {
               Manual Simulation
               </Link>
           </li>
-          <li>
+          <li className="nav-item">
             <Link
               to="/computer"
               className={window.location.pathname === "/computer"

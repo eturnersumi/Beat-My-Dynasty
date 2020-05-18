@@ -81,17 +81,29 @@ let teamExport;
         loser="";
         console.log("********it's a tie!")
       }
-      playGame(winner, loser, tie);
-      //console.log("winner is: ", winner, "loser is: ", loser)
-      return {winner, loser, tie};
+      // playGame(winner, loser, tie);
+      // //console.log("winner is: ", winner, "loser is: ", loser)
+      // return {winner, loser, tie};
+      var obj = {
+        "team1": team1,
+        "team2": team2,
+        "winner": winner,
+        "loser": loser,
+        "isTie": tie
+      };
+      console.log("this is the object: ", obj)
+      storage(obj);
   }
   }
 
 
-  function playGame(win, lose, tie) {
-    //redirect to results page 
-    console.log("-------play game method: ", win, lose, tie)
-    return {win, lose, tie};
+  // function playGame(win, lose, tie) {
+  //   //redirect to results page 
+  //   console.log("-------play game method: ", win, lose, tie)
+  //   return {win, lose, tie};
+  // }
+  function storage(obj) {
+    localStorage.setItem("gametime", JSON.stringify(obj))
   }
 
 
