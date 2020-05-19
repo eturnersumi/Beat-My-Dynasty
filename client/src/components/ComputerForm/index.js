@@ -127,7 +127,7 @@ let teamExport;
     
     <div className="box" >
       <h2 className="card-title">Your Team &emsp;</h2>
-      <img className="teamOneimg card-img-top" src="" alt="teamOne" />
+      <img className="teamOneimg card-img-top" src="" />
       <p 
       className="teamName"
       id="teamOne"
@@ -144,7 +144,7 @@ let teamExport;
     
     <div className="box">
       <h2 className="card-title">Opponent &emsp;</h2>
-      <img className="teamTwoimg card-img-top" src="" alt="teamTwo" />
+      <img className="teamTwoimg card-img-top" src="" />
       <p 
       className="teamName"
       id="teamTwo"
