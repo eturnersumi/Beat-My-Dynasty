@@ -16,7 +16,8 @@ input[type=text], input[type=password] {
 /* Set a style for all buttons */
 button {
   background-color: #4CAF50;
-  color: white;
+  font-size: 20px;
+  color: black;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -27,6 +28,9 @@ button {
 /* Add a hover effect for buttons */
 button:hover {
   opacity: 0.8;
+}
+a:visited {
+  color: black
 }
 
 /* Extra style for the cancel button (red) */

@@ -1,5 +1,6 @@
 import React from "react";
 import Nav2 from "../components/Nav2";
+import Profiler from "../components/Profiler";
 
 
 function Profile() {
@@ -10,6 +11,7 @@ function Profile() {
         This is the Profile page!
       </h1>
     <Nav2 />
+    <Profiler />
     </div>
   )
 };

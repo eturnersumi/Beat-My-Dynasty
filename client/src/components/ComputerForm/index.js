@@ -166,12 +166,7 @@ let teamExport;
     className="play"
     >
     <Link
-    to={{
-      pathname: "/results",
-      data: teamExport
-    }}
-    
-    
+    to= "/results"
     className={window.location.pathname === "/results"
     ? "nav-link active"
     : "nav-link"
