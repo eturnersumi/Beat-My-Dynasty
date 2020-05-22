@@ -4,7 +4,7 @@ import "./style.css";
 
 function Nav2() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg">
       <div>
         <ul className="navbar-nav">
           <li className="nav-item">
@@ -15,10 +15,10 @@ function Nav2() {
                 : "nav-link"
               }
               >
-              Profile
+              Profile |
               </Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item" id="nav-link2">
             <Link
               to="/manual"
               className={window.location.pathname === "/manual"
@@ -26,7 +26,7 @@ function Nav2() {
                 : "nav-link"
               }
               >
-              Manual Simulation
+              Manual Simulation |
               </Link>
           </li>
           <li className="nav-item">

@@ -1,7 +1,14 @@
+#comp {
+  background-color: #666262a9;
+  color: white;
+  margin-top: 100px;
+  width: 50%;
+  margin-left: 25%;
+}
 .row {
-  padding-left: 20px;
+  padding-left: 15%;
   margin: 0;
-  margin-left: 10px;
+  margin-left: 10%;
 }
 
 .teamList {
@@ -19,11 +26,18 @@
 
 .pick {
   background-color: #0313fc;
+  font-size: 35px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+}
+.pick:hover {
+  opacity: 0.4;
 }
 
 .teamName {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
+  color: black;
   background-color: #f4fc03;
   font-size: 20px;
 }

@@ -16,15 +16,10 @@ const userSchema = new Schema({
       type: String
     },
     teamImg: {
-      type: String,
-      get: v => `${root}${v}`
+      type: String
     }
 });
 
 const User = mongoose.model("User", userSchema);
-
-const doc = new User({ userName: 'Val', favTeam: 'Val', favPlayer: 'Val', teamImg: './userImg'});
-doc.teamImg;
-doc.toObject({getters: false}).teamImg;
 
 module.exports = User;

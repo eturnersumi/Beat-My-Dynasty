@@ -5,19 +5,19 @@ import { Link } from "react-router-dom";
 function SignInForm() {
   return(
     <form action="action_page.php" method="post" >
-  <div class="imgcontainer">
-    <img className="signin" src={require("../../images/basketball_image.jpg")} alt="Avatar" class="avatar" />
-  </div>
+    <div className="container">
+    <h1>Sign in</h1>
+    <p> Sign in to your profile here</p>
 
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
+  
+    <label htmlFor="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required />
 
-    <label for="psw"><b>Password</b></label>
+    <label htmlFor="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required />
 
     <button 
-    id="signin"
+    id="signin2"
     type="submit"
     >
     <Link
@@ -31,15 +31,15 @@ function SignInForm() {
   </Link>
     </button>
     <label>
-      <input type="checkbox" checked="checked" name="remember" /> Remember me
+      <input type="checkbox" defaultChecked name="remember" /> Remember me
       
     </label>
   </div>
 
-  <div class="container" >
+  <div className="container" >
   <button 
   type="button" 
-  class="cancelbtn">
+  className="cancelbtn">
   <Link
     to= "/"
     className={window.location.pathname === "/"
@@ -50,7 +50,8 @@ function SignInForm() {
     Cancel
   </Link>
   </button>
-    <span class="psw">Forgot <a href="https://account.live.com/password/reset">password?</a></span>
+    <span className="psw">Forgot <a href="https://account.live.com/password/reset">password?</a></span>
+  
   </div>
 </form>
   )

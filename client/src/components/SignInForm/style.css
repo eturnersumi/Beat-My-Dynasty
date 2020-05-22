@@ -14,7 +14,7 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-button {
+#signin2 {
   background-color: #4CAF50;
   font-size: 20px;
   color: black;
@@ -26,10 +26,10 @@ button {
 }
 
 /* Add a hover effect for buttons */
-button:hover {
+#signin2:hover {
   opacity: 0.8;
 }
-a:visited {
+#signin2:visited {
   color: black
 }
 

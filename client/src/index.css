@@ -1,0 +1,29 @@
+html {
+  margin: 0;
+  height: 100%;
+}
+#root {
+  height: 100%;
+}
+.wrapper {
+  height: 100%;
+  background-image: url("./images/background.jpg");
+ 
+  background-size: 100%;
+
+}
+#homehead {
+  color: #fa0505;
+  text-align: center;
+  font-size: 50px;
+  background-color: #453c3c;
+  margin-top: 10px;
+}
+
+
+/* body {
+  background-image: url("./images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 0.2;
+} */

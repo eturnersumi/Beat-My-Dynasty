@@ -108,22 +108,9 @@ let teamExport;
 
 
   return(
-    <div>     
+    <div id="comp">     
     <div className="row">
-    <div className="teamList">
-      <h2 className="teamsHead">Teams &emsp;</h2>
-       <table>
-       <tbody>
-       {teams.map(team => (
-        <tr key={team._id}>
-        <td
-        name={team.team}
-        >{team.team}</td>
-        </tr>
-        ))}
-       </tbody>
-       </table> 
-    </div>
+    
     
     <div className="box" >
       <h2 className="card-title">Your Team &emsp;</h2>
@@ -164,6 +151,7 @@ let teamExport;
     
     <button
     className="play"
+    id="play"
     >
     <Link
     to= "/results"

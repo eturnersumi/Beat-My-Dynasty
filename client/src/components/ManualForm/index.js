@@ -137,10 +137,10 @@ useEffect(() => {
 
 
  return(
-   <div className="wrapper">
+   <div id="comp">
      <div className="row" id="manual">
-       <div className="col-sm-3">
-        <h3>Team #1 </h3>
+       <div >
+        <h3 id="teahead">Team #1 </h3>
          <form className="pickOne">
            <select 
            value={chosenTeamOne}
@@ -159,7 +159,7 @@ useEffect(() => {
          </form>
          <br />
          <br />
-         <h3>Team #2 </h3>
+         <h3 id="teahead">Team #2 </h3>
          <form className="pickTwo">
          <select 
          value={chosenTeamTwo}
@@ -181,6 +181,9 @@ useEffect(() => {
          
        </div>
        <div>
+       </div>
+       <div >
+       <br />
        <br />
        <br />
        <br />

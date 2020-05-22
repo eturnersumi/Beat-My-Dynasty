@@ -4,31 +4,31 @@ import "./style.css";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light" id="nav">
       <div>
-        <ul>
-          <li>
+        <ul id="ulnav">
+          <li className="nav-item" id="signup">
             <Link
               to="/signup"
               className={
                 window.location.pathname === "/" || window.location.pathname === "/signup"
-                ? "nav-link active"
+                ? "nav-link act"
                 : "nav-link"
               }
               >
-              Sign-Up
+              Sign Up
               </Link>
           </li>
-          <li>
+          <li className="nav-item" id="signin">
             <Link
               to="/signin"
               className={
                 window.location.pathname === "/" || window.location.pathname === "/signin"
-                ? "nav-link active"
+                ? "nav-link act"
                 : "nav-link"
               }
               >
-              Sign-In
+              Sign In
               </Link>
           </li>
         </ul>

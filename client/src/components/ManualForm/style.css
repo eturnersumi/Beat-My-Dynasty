@@ -1,3 +1,10 @@
+.row {
+  
+  color: white;
+  margin-top: 100px;
+  width: 50%;
+  margin-left: 25%;
+}
 .pickOne, .pickTwo {
   border: none;
 }
@@ -8,4 +15,18 @@
 
 #manual {
   padding-left: 30%;
+  color: black
+  
+}
+
+#teahead {
+  font-size: 35px;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  outline: 3px dotted red;
+}
+
+.pickOne, .pickTwo {
+  font-size: 18px;
 }
