@@ -11,8 +11,16 @@ function Profiler() {
 
   const [photo, setPhoto] = useState();
   const [url, setURL] = useState("");
-  // const photo = props.profilePhotoURL ? props.profilePhotoURL : placeholder;
-  // const url = props.profilePhotoURL ? props.profilePhotoURL : "";
+  var userObj={};
+  userObj = JSON.parse(localStorage.getItem("userData"))
+  if (!userObj) {
+    userObj={};
+  }
+  let userName = userObj.username;
+  let favTeam = userObj.favoriteTeam;
+
+  console.log("this is your username: ", userName)
+  console.log("this is your fav team: ", favTeam)
   
 
   function showWidget() {
@@ -53,6 +61,13 @@ function Profiler() {
         </img>
         <br />
 
+      </Col>
+      
+      <Col>
+        <h3>Welcome basketball fan!</h3>
+        <p>
+          Customize your profile and connect with your friends!
+        </p>
       </Col>
     </Row>
   </Container>
