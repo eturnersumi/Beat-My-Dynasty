@@ -6,3 +6,11 @@
   height: 300px;
 
 }
+#profrow {
+  padding-left: 0px;
+  margin-left: 0px;
+}
+#profbtn {
+  width: 300px;
+  font-size: 25px;
+}

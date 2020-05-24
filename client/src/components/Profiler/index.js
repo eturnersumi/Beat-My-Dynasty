@@ -1,37 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import placeholder from "../../images/basketball_image.jpg";
 import "./style.css"
+require('dotenv').config()
 
-function Profiler(props) {
+function Profiler() {
 
+  const [photo, setPhoto] = useState();
+  const [url, setURL] = useState("");
+  // const photo = props.profilePhotoURL ? props.profilePhotoURL : placeholder;
+  // const url = props.profilePhotoURL ? props.profilePhotoURL : "";
   
-    const photo = props.profilePhotoURL ? props.profilePhotoURL : placeholder;
-  const url = props.profilePhotoURL ? props.profilePhotoURL : "";
-  
 
+  function showWidget() {
+    let widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: 'dzpwlldac',
+        uploadPreset: 'g6lwdxhy',
+        sources: ["local", "camera"]
+      },
+      (error, result) => {
+        if (result.event === "success") {
+        
+          const file = result.info.url; 
+          console.log("this is the file: ", file);
+          //setPhoto({ photo: file });
+          setPhoto(file)
+        }
+      }
+    );
+    widget.open();
+  };
+  
   return(
     <div className="profileWrapper">
     <Container>
-    <Row>
+    <Row id="profrow">
       <Col>
-        <Button variant="success" size="lg" onClick={props.showWidget}>
-          Upload picture
+        <Button id="profbtn" variant="success" size="lg" onClick={showWidget}>
+          Upload your profile picture
         </Button>
         <br />
 
-        <img className="profileImg" src={photo} />
+        <img 
+        className="profileImg" 
+        src={photo} 
+        >
+        
+        </img>
         <br />
 
-        <p>
-          This is the picture URL:{" "}
-          <span>
-            <a href={url}>{url}</a>
-          </span>
-        </p>
       </Col>
     </Row>
   </Container>

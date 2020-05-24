@@ -8,7 +8,7 @@ function Profile() {
     
     <div>
     <h1>
-        This is the Profile page!
+        My Profile
       </h1>
     <Nav2 />
     <Profiler />
