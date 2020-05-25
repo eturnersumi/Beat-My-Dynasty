@@ -5,17 +5,29 @@ import Col from "react-bootstrap/Col";
 
 function ResultsLoad() {
 var resultsObj={};
+let winnerPlayers = {};
+let loserPlayers = {};
+let finalScore;
+
 resultsObj = JSON.parse(localStorage.getItem("gametime"))
 if (!resultsObj) {
   resultsObj={};
 }
-let team1Players = {};
-let team2Players = {};
-team1Players = resultsObj.team1.players[0];
-team2Players = resultsObj.team2.players[0];
+
+
+if (resultsObj.winner === resultsObj.team1.team) {
+  winnerPlayers = resultsObj.team1.players[0];
+  loserPlayers = resultsObj.team2.players[0];
+}
+else {
+  winnerPlayers = resultsObj.team2.players[0];
+  loserPlayers = resultsObj.team1.players[0];
+}
+
+finalScore = 103;
 //team1Players.push(resultsObj.team1.players[0])
 console.log("this is the results object: ", resultsObj)
-console.log("these are the team1 players: ", team1Players)
+
 
   return(
     <div className="resultWrapper">
@@ -35,19 +47,19 @@ console.log("these are the team1 players: ", team1Players)
       </p>
       <ol id="players">
         <li id="playpos">
-        {team1Players.PG} (PG)
+        {winnerPlayers.PG} (PG)
         </li>
         <li>
-        {team1Players.SG} (SG)
+        {winnerPlayers.SG} (SG)
         </li>
         <li>
-        {team1Players.SF} (SF)
+        {winnerPlayers.SF} (SF)
         </li>
         <li>
-        {team1Players.PF} (PF)
+        {winnerPlayers.PF} (PF)
         </li>
         <li>
-        {team1Players.C} (C)
+        {winnerPlayers.C} (C)
         </li>
       </ol>
       <p>
@@ -68,19 +80,19 @@ console.log("these are the team1 players: ", team1Players)
 
         <ol id="players">
           <li id="playpos">
-          {team2Players.PG} (PG)
+          {loserPlayers.PG} (PG)
           </li>
           <li>
-          {team2Players.SG} (SG)
+          {loserPlayers.SG} (SG)
           </li>
           <li>
-          {team2Players.SF} (SF)
+          {loserPlayers.SF} (SF)
           </li>
           <li>
-          {team2Players.PF} (PF)
+          {loserPlayers.PF} (PF)
           </li>
           <li>
-          {team2Players.C} (C)
+          {loserPlayers.C} (C)
           </li>
         </ol>
         <p>
