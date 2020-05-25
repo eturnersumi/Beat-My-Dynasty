@@ -7,20 +7,22 @@
 }
 .pickOne, .pickTwo {
   border: none;
+  
 }
 
-.btn {
+.game {
   font-size: 30px;
 }
 
 #manual {
-  padding-left: 30%;
+  
   color: black
   
 }
 
 #teahead {
   font-size: 35px;
+  width: 50%;
   font-weight: bold;
   color: #ffffff;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -29,4 +31,8 @@
 
 .pickOne, .pickTwo {
   font-size: 18px;
+}
+#picks {
+  padding-left: 30%;
+  padding-top: 5%;
 }

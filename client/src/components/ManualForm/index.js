@@ -138,9 +138,9 @@ useEffect(() => {
 
  return(
    <div id="comp">
-     <div className="row" id="manual">
-       <div >
-        <h3 id="teahead">Team #1 </h3>
+     <div id="manual">
+       <div id="picks">
+        <p id="teahead">Team #1 </p>
          <form className="pickOne">
            <select 
            value={chosenTeamOne}
@@ -159,7 +159,7 @@ useEffect(() => {
          </form>
          <br />
          <br />
-         <h3 id="teahead">Team #2 </h3>
+         <p id="teahead">Team #2 </p>
          <form className="pickTwo">
          <select 
          value={chosenTeamTwo}
@@ -185,10 +185,8 @@ useEffect(() => {
        <div >
        <br />
        <br />
-       <br />
-       <br />
-       <br />
-       <button className="btn">
+     
+       <button className="game">
        <Link
         to="/results"
         className={window.location.pathname === "/results"
