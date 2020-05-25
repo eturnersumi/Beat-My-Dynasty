@@ -1,6 +1,8 @@
 import React, { useEffect, useState, Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import "./style.css";
 
 
@@ -108,12 +110,13 @@ let teamExport;
 
 
   return(
-    <div id="comp">     
-    <div className="row">
-    
-    
-    <div className="box" >
-      <h2 className="card-title">Your Team &emsp;</h2>
+    <div className="compWrapper"> 
+    <p>
+      Use the pick teams button to randomly select 2 dynasties.
+    </p>    
+    <Row id="compRow">
+    <Col>
+      <h2>Your Team &emsp;</h2>
       <img className="teamOneimg card-img-top" src="" />
       <p 
       className="teamName"
@@ -121,16 +124,13 @@ let teamExport;
       >
         {teamOne ? teamOne.team : " "} 
       </p>
-  
-    </div>
-
-    <div className="box" >
-    <br />
-      <h2 className="card-title">VS &emsp;</h2>
-    </div>
+    </Col>
     
-    <div className="box">
-      <h2 className="card-title">Opponent &emsp;</h2>
+    
+    <br />
+      <h2>VS &emsp;</h2>
+    <Col>
+      <h2>Opponent &emsp;</h2>
       <img className="teamTwoimg card-img-top" src="" />
       <p 
       className="teamName"
@@ -138,33 +138,30 @@ let teamExport;
       >
       {teamTwo ? teamTwo.team : " "} 
       </p>
-    </div>
-    <div className="btn">
+    </Col>
+    <Col>
     <button
     className="pick"
     onClick={generateTeams}
     >
     PICK TEAMS
+  </button>
+  <button
+        className="play"
+        id="play"
+        >
+        <Link
+        to= "/results"
+        className={window.location.pathname === "/results"
+        ? "nav-link active"
+        : "nav-link"
+        }
+        >
+        GAME TIME
+        </Link>
     </button>
-    <br />
-    <br />
-    
-    <button
-    className="play"
-    id="play"
-    >
-    <Link
-    to= "/results"
-    className={window.location.pathname === "/results"
-    ? "nav-link active"
-    : "nav-link"
-    }
-    >
-    GAME TIME
-    </Link>
-    </button>
-    </div>
-    </div>
+    </Col>
+    </Row>
     </div>
   )
   }
