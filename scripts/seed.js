@@ -173,11 +173,11 @@ const teamSeed = [
     ],
     players: [
       {
-        PG: "Bill Cartwright",
-        SG: "Horace Grant",
-        SF: "Michael Jordan",
-        PF: "John Paxson",
-        C: "Scottie Pippen"
+        PG: "John Paxson",
+        SG: "Michael Jordan",
+        SF: "Scottie Pippen",
+        PF: "Horace Grant",
+        C: "Bill Cartwright"
       }
     ]
   },

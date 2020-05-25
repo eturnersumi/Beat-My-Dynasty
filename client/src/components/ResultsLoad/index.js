@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
-//import { teamExport } from "../ComputerForm";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function ResultsLoad() {
 var resultsObj={};
@@ -17,45 +18,54 @@ console.log("this is the results object: ", resultsObj)
 console.log("these are the team1 players: ", team1Players)
 
   return(
-    <div className="wrapper">
-      <div className="row" id="resrow">
-      <div className="winner col-sm-6">
-        <h2>WINNER</h2>
-        </div>
-      <div className="loser col-sm-6">
-        <h2>LOSER</h2>
-      </div>
-      
-      </div>
-      <div className="row" id="resrow">
-      <div className="winner col-sm-6">
-        <span id="winTeam"
-        >
-        {resultsObj ? resultsObj.winner : "Please start a game"}
-        </span>
-        <ol id="players">
-          <li id="playpos">
-          {team1Players.PG} (PG)
-          </li>
-          <li>
-          {team1Players.SG} (SG)
-          </li>
-          <li>
-          {team1Players.SF} (SF)
-          </li>
-          <li>
-          {team1Players.PF} (PF)
-          </li>
-          <li>
-          {team1Players.C} (C)
-          </li>
-        </ol>
-      </div>
-      <div className="loser col-sm-6">
-        <span id="loseTeam"
+    <div className="resultWrapper">
+    <h2>
+      {resultsObj.isTie ? "It's a TIE!" : ""}
+    </h2>
+    <Row id="resrow">
+      <Col>
+      <h2 id="winner">WINNER</h2>
+      <div className="winner">
+      <span id="winTeam"
+      >
+      {resultsObj ? resultsObj.winner : "Please start a game"}
+      </span>
+      <p>
+        ---Starting Lineup---
+      </p>
+      <ol id="players">
+        <li id="playpos">
+        {team1Players.PG} (PG)
+        </li>
+        <li>
+        {team1Players.SG} (SG)
+        </li>
+        <li>
+        {team1Players.SF} (SF)
+        </li>
+        <li>
+        {team1Players.PF} (PF)
+        </li>
+        <li>
+        {team1Players.C} (C)
+        </li>
+      </ol>
+      <p>
+      ---Box Scores---
+      </p>
+      </div>        
+      </Col>
+      <Col>
+      <h2 id="loser">LOSER</h2>
+      <div className="winner">
+      <span id="loseTeam"
         >
         {resultsObj ? resultsObj.loser : "Please start a game"}
         </span>
+        <p>
+        ---Starting Lineup---
+      </p>
+
         <ol id="players">
           <li id="playpos">
           {team2Players.PG} (PG)
@@ -73,10 +83,13 @@ console.log("these are the team1 players: ", team1Players)
           {team2Players.C} (C)
           </li>
         </ol>
+        <p>
+        ---Box Scores---
+        </p>
       </div>
+      </Col>
+      </Row>
       </div>
-
-    </div>
   )
 }
 
