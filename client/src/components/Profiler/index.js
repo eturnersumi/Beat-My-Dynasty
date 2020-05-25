@@ -64,9 +64,18 @@ function Profiler() {
       </Col>
       
       <Col>
-        <h3>Welcome basketball fan!</h3>
+        <h3 id="welcome">Welcome {userObj ? favTeam : "basketball"} fan!</h3>
         <p>
           Customize your profile and connect with your friends!
+        </p>
+        <p>
+        
+        <label htmlFor="bio"><b>--Bio--</b></label>
+        <br />
+        <textarea placeholder="Tell us about yourself" name="bio"/>
+        <button type="submit" className="save">
+          Save
+        </button>
         </p>
       </Col>
     </Row>

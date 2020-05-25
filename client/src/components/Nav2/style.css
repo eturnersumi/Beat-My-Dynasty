@@ -1,3 +1,6 @@
 .nav-link2 {
   color: #ffffff;
 }
+.active {
+  color: red;
+}

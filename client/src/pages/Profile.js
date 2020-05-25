@@ -4,11 +4,18 @@ import Profiler from "../components/Profiler";
 
 
 function Profile() {
+  var userObj={};
+  userObj = JSON.parse(localStorage.getItem("userData"))
+  if (!userObj) {
+    userObj={};
+  }
+  let userName = userObj.username;
+  let favTeam = userObj.favoriteTeam;
   return(
     
     <div>
     <h1>
-        My Profile
+        My Profile {userObj ? `- [${userName}]` : ""}
       </h1>
     <Nav2 />
     <Profiler />

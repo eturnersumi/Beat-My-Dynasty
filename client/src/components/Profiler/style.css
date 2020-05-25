@@ -15,3 +15,17 @@
   width: 300px;
   font-size: 25px;
 }
+
+textarea {
+  color: #0a0a0a;
+  width: 400px;
+  height: 200px;
+}
+.save {
+  background-color: grey;
+  width: 400px;
+  
+}
+#welcome {
+  text-decoration: underline;
+}
