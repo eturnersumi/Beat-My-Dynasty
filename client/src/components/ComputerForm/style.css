@@ -36,3 +36,8 @@
   background-color: #f4fc03;
   font-size: 20px;
 }
+
+#yours, #opponent {
+  font-size: 40px;
+  text-shadow: 2px 2px red;
+}

@@ -116,28 +116,32 @@ let teamExport;
     </p>    
     <Row id="compRow">
     <Col>
-      <h2>Your Team &emsp;</h2>
-      <img className="teamOneimg card-img-top" src="" />
+      <h2 
+      className="w3-center w3-animate-left"
+      id="yours">Your Team &emsp;</h2>
       <p 
       className="teamName"
       id="teamOne"
       >
         {teamOne ? teamOne.team : " "} 
       </p>
+      <img className="teamOneimg card-img-top" src="" />
     </Col>
     
     
     <br />
       <h2>VS &emsp;</h2>
     <Col>
-      <h2>Opponent &emsp;</h2>
-      <img className="teamTwoimg card-img-top" src="" />
+      <h2 
+      className="w3-center w3-animate-right"
+      id="opponent">Opponent &emsp;</h2>
       <p 
       className="teamName"
       id="teamTwo"
       >
       {teamTwo ? teamTwo.team : " "} 
       </p>
+      <img className="teamTwoimg card-img-top" src="" />
     </Col>
     <Col>
     <button
