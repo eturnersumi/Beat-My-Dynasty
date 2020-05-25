@@ -1,3 +1,10 @@
+.manWrapper {
+  background-color: #666262a9;
+  color: white;
+  margin-top: 50px;
+  width: 75%;
+  margin-left: 10%;
+}
 .row {
   
   color: white;
@@ -9,7 +16,9 @@
   border: none;
   
 }
-
+#manPlay {
+  width: 50%;
+}
 .game {
   font-size: 30px;
 }
@@ -19,9 +28,9 @@
 }
 
 #manual {
-  
-  color: black
-  
+  color: black;
+  padding-left: 30%;
+  padding-top: 5%;
 }
 
 #teahead {
@@ -36,7 +45,6 @@
 .pickOne, .pickTwo {
   font-size: 18px;
 }
-#picks {
-  padding-left: 30%;
-  padding-top: 5%;
+#picks1 {
+  
 }

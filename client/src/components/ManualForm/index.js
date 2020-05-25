@@ -125,25 +125,18 @@ useEffect(() => {
   }
   }
 
-  // function playGame(win, lose, tie) {
-  //   //redirect to results page 
-  //   console.log("-------play game method: ", win, lose, tie)
-  //   return {win, lose, tie};
-  // }
-
   function storage(obj) {
     localStorage.setItem("gametime", JSON.stringify(obj))
   }
 
 
  return(
-   <div id="comp">
-     <div id="manual">
-     <p>
+   <div className="manWrapper">
+      <p>
         Pick 2 dynasties to go toe to toe below.
-       </p>
-       <div id="picks">
-       
+      </p>
+     <div id="manual">
+             
         <p id="teahead">Team #1 </p>
          <form className="pickOne">
            <select 
@@ -182,15 +175,12 @@ useEffect(() => {
            ))}
          </select>
        </form>
-         
-       </div>
        <div >
        </div>
-       <div className="game">
        <br />
        <br />
      
-       <button>
+       <button id="manPlay">
        <Link
         to="/results"
         className={window.location.pathname === "/results"
@@ -201,7 +191,6 @@ useEffect(() => {
         GAME TIME
         </Link>
         </button>
-       </div>
       
      </div>
    </div>
