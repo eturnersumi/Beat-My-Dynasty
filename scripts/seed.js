@@ -893,7 +893,7 @@ const teamSeed = [
         rebounds: 45,
         offenseRating: 113,
         defenseRating: 107,
-        opponentPoints: 106.7,
+        opponentPoints: 107,
         opponentTurnoversPG: 16
       }
     ],

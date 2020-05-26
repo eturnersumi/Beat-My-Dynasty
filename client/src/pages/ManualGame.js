@@ -9,7 +9,7 @@ function ManualGame() {
   
   return(
     <div>
-    <h1>This is the Manual Game Page!</h1>
+    
     <Nav2 />
     <ManualForm /> 
       

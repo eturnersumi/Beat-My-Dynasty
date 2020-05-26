@@ -6,9 +6,7 @@ import ResultsLoad from "../components/ResultsLoad";
 function Results() {
   return(
     <div>
-      <h1>
-        This is the Game Results page!
-      </h1>
+      
       <Nav2 />
       <ResultsLoad />
     </div>

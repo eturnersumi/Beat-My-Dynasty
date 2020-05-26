@@ -7,7 +7,7 @@ function ComputerGame() {
 
   return(
     <div>
-    <h1>This is the Computer Game Page!</h1>
+    
     <Nav2 />
     <ComputerForm />
     </div>

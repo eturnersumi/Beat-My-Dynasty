@@ -37,7 +37,10 @@ console.log("this is the results object: ", resultsObj)
     <Row id="resrow">
       <Col>
       <h2 id="winner">WINNER</h2>
-      <div className="winner">
+      <div 
+      className="winner"
+      className="w3-center w3-animate-left"
+      >
       <span id="winTeam"
       >
       {resultsObj ? resultsObj.winner : "Please start a game"}
@@ -45,7 +48,7 @@ console.log("this is the results object: ", resultsObj)
       <p>
         ---Starting Lineup---
       </p>
-      <ol id="players">
+      <ul id="players">
         <li id="playpos">
         {winnerPlayers.PG} (PG)
         </li>
@@ -61,7 +64,7 @@ console.log("this is the results object: ", resultsObj)
         <li>
         {winnerPlayers.C} (C)
         </li>
-      </ol>
+      </ul>
       <p>
       ---Box Scores---
       </p>
@@ -69,7 +72,10 @@ console.log("this is the results object: ", resultsObj)
       </Col>
       <Col>
       <h2 id="loser">LOSER</h2>
-      <div className="winner">
+      <div 
+      className="loser"
+      className="w3-center w3-animate-right"
+      >
       <span id="loseTeam"
         >
         {resultsObj ? resultsObj.loser : "Please start a game"}
