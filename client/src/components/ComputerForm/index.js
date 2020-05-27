@@ -37,7 +37,6 @@ let teamExport;
   function generateTeams(e) {
     const firstPick = teams[Math.floor(Math.random()*teams.length)];
     const secondPick = teams[Math.floor(Math.random()*teams.length)];
-    //console.log("generate teams function", firstPick, secondPick)
     setTeamOne(firstPick);
     setTeamTwo(secondPick);
    calculateWinner(firstPick, secondPick)
@@ -45,32 +44,29 @@ let teamExport;
 
   function calculateWinner(team1, team2) {
     if (JSON.stringify(team1) === '{}' || JSON.stringify(team2) === '{}') {
-      //console.log("CALCULATE FUNCTION NOT RUNNING")
       return;
     }
     else {
     
-    //console.log("calculate function team 1: ", team1)
-    //console.log("calculate function team 2: ", team2)
-    // console.log("team 1 points: ", firstPick.statistics[0].points)
-    // console.log("team 1 assists: ", firstPick.statistics[0].assists)
-      // let team1=firstPick;
-      // let team2=secondPick;
       let team1Score=50;
       let team2Score=50;
       let winner;
       let loser;
       let tie;
+      let team1half;
+      let team2half;
 
       let stats1 = team1.statistics[0];
       let stats2 = team2.statistics[0];
 
       if (stats1.points > stats1.opponentPoints) {
         team1Score+= stats1.points - stats1.opponentPoints;
+        team1half=team1Score;
         console.log("+ team1 oppPt difference", team1Score)
       }
       if (stats2.points > stats2.opponentPoints) {
         team2Score+= stats2.points - stats2.opponentPoints;
+        team2half=team2Score;
         console.log("+ team2 oppPt difference", team2Score)
       }
       if (stats1.assists > stats2.assists) {
@@ -156,23 +152,18 @@ let teamExport;
         winner=team1.team;
         loser=team2.team;
         tie=false;
-        //console.log("*******winner is: ", winner, " loser is: ", loser)
       }
       else if (team2Score > team1Score) {
         winner=team2.team;
         loser=team1.team;
         tie=false;
-        //console.log("********winner is: ", winner, " loser is: ", loser)
       }
       else {
         tie=true;
         winner="";
         loser="";
-        //console.log("********it's a tie!")
       }
-      // playGame(winner, loser, tie);
-      // //console.log("winner is: ", winner, "loser is: ", loser)
-      // return {winner, loser, tie};
+     
       var obj = {
         "team1": team1,
         "team2": team2,
@@ -180,19 +171,14 @@ let teamExport;
         "loser": loser,
         "isTie": tie,
         "team1Score": team1Score,
-        "team2Score": team2Score
+        "team2Score": team2Score,
+        "team1HalfScore": team1half,
+        "team2HalfScore": team2half
       };
-      //console.log("this is the object: ", obj)
       storage(obj);
   }
   }
 
-
-  // function playGame(win, lose, tie) {
-  //   //redirect to results page 
-  //   console.log("-------play game method: ", win, lose, tie)
-  //   return {win, lose, tie};
-  // }
   function storage(obj) {
     localStorage.setItem("gametime", JSON.stringify(obj))
   }

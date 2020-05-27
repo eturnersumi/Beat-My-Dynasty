@@ -35,6 +35,10 @@
   font-size: 35px;
   text-shadow: 0 0 4px #FF0000;
 }
+#team {
+  font-size: 35px;
+  text-shadow: 0 0 25px red;
+}
 #players, #boxscore {
   list-style: none;
   font-size: 20px;

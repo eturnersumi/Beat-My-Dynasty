@@ -19,6 +19,9 @@
 #manPlay {
   width: 50%;
 }
+#manPlay:active {
+  text-decoration: none;
+}
 .game {
   font-size: 30px;
 }

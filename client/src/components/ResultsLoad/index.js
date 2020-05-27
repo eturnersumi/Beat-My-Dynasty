@@ -13,6 +13,8 @@ let winnerStats;
 let loserStats;
 let winScore;
 let loseScore;
+let winHalfScore;
+let loseHalfScore;
 
 
 resultsObj = JSON.parse(localStorage.getItem("gametime"))
@@ -28,7 +30,9 @@ if (resultsObj.winner === resultsObj.team1.team)  {
   winnerStats = resultsObj.team1.statistics[0];
   loserStats = resultsObj.team2.statistics[0];
   winScore = resultsObj.team1Score;
-  loseScore = resultsObj.team2Score
+  loseScore = resultsObj.team2Score;
+  winHalfScore = resultsObj.team1HalfScore;
+  loseHalfScore = resultsObj.team2HalfScore;
 }
 else if (resultsObj.winner === resultsObj.team2.team) {
   winnerTeam = resultsObj.team2.team;
@@ -39,7 +43,9 @@ else if (resultsObj.winner === resultsObj.team2.team) {
   loserStats = resultsObj.team1.statistics[0];
   winScore = resultsObj.team2Score;
   loseScore = resultsObj.team1Score;
-}
+  winHalfScore = resultsObj.team2HalfScore;
+  loseHalfScore = resultsObj.team1HalfScore;
+} 
 else {
   winnerTeam = resultsObj.team1.team;
   loserTeam = resultsObj.team2.team;
@@ -49,6 +55,8 @@ else {
   loserStats = resultsObj.team2.statistics[0];
   winScore = resultsObj.team1Score;
   loseScore = resultsObj.team2Score
+  winHalfScore = resultsObj.team1HalfScore;
+  loseHalfScore = resultsObj.team2HalfScore;
 }
 
 
@@ -70,7 +78,7 @@ console.log("this is the results object: ", resultsObj)
       className="winner"
       className="w3-center w3-animate-left"
       >
-      <span id="winTeam"
+      <span id={resultsObj.winner ? "winTeam" : "team"}
       >
       {resultsObj.winner ? resultsObj.winner : winnerTeam}
       </span>
@@ -102,7 +110,7 @@ console.log("this is the results object: ", resultsObj)
           Final Score: <span id="finalScore">{winScore}</span>
           </li>
           <li>
-          Score at Halftime: <span></span>
+          Score at Halftime: <span>{winHalfScore}</span>
           </li>
           <li>
           Assists: <span>{winnerStats.assists}</span>
@@ -120,13 +128,13 @@ console.log("this is the results object: ", resultsObj)
           Blocks: <span>{winnerStats.blocks}</span>
           </li>
           <li>
-          Field Goal Pct: <span>{winnerStats.fgPercentage}</span>
+          Field Goal Pct: <span>{winnerStats.fgPercentage}%</span>
           </li>
           <li>
-          Freethrow Pct: <span>{winnerStats.ftPercentage}</span>
+          Freethrow Pct: <span>{winnerStats.ftPercentage}%</span>
           </li>
           <li>
-          3-Pt Field Goal Pct: <span>{winnerStats.threePtPercentage}</span>
+          3-Pt Field Goal Pct: <span>{winnerStats.threePtPercentage}%</span>
           </li>
         </ol>
       </div>        
@@ -138,7 +146,7 @@ console.log("this is the results object: ", resultsObj)
       className="loser"
       className="w3-center w3-animate-right"
       >
-      <span id="loseTeam"
+      <span id={resultsObj.loser ? "loseTeam": "team"}
         >
         {resultsObj.loser ? resultsObj.loser : loserTeam}
         </span>
@@ -171,7 +179,7 @@ console.log("this is the results object: ", resultsObj)
           Final Score: <span id="finalScore">{loseScore}</span>
           </li>
           <li>
-          Score at Halftime: <span></span>
+          Score at Halftime: <span>{loseHalfScore}</span>
           </li>
           <li>
           Assists: <span>{loserStats.assists}</span>
@@ -189,13 +197,13 @@ console.log("this is the results object: ", resultsObj)
           Blocks: <span>{loserStats.blocks}</span>
           </li>
           <li>
-          Field Goal Pct: <span>{loserStats.fgPercentage}</span>
+          Field Goal Pct: <span>{loserStats.fgPercentage}%</span>
           </li>
           <li>
-          Freethrow Pct: <span>{loserStats.ftPercentage}</span>
+          Freethrow Pct: <span>{loserStats.ftPercentage}%</span>
           </li>
           <li>
-          3-Pt Field Goal Pct: <span>{loserStats.threePtPercentage}</span>
+          3-Pt Field Goal Pct: <span>{loserStats.threePtPercentage}%</span>
           </li>
         </ol>
       </div>
