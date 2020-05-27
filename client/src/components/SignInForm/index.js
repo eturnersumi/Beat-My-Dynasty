@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 
 function SignInForm() {
+
+  const [userName, setUserName] = useState("");
+  const [favTeam, setFavTeam] = useState("");
+  
+  var userObj = {
+    "username": userName,
+    "favoriteTeam": favTeam,
+    "profileImage": ""
+  }
+  
+  useEffect(() => {
+    console.log("this is the username: ", userName)
+    console.log("this is the fav team: ", favTeam)
+    storage(userObj)
+  })
+  function storage(userObj) {
+    localStorage.setItem("userData", JSON.stringify(userObj))
+  }
+
+
+
   return(
     <form action="action_page.php" method="post" >
     <div className="container">
@@ -11,7 +32,11 @@ function SignInForm() {
 
   
     <label htmlFor="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required />
+    <input 
+    onChange={e => setUserName(e.target.value)}
+    type="text" 
+    placeholder="Enter Username" 
+    name="uname" required />
 
     <label htmlFor="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required />

@@ -10,7 +10,8 @@ function SignUpForm() {
   
   var userObj = {
     "username": userName,
-    "favoriteTeam": favTeam
+    "favoriteTeam": favTeam,
+    "profileImage": ""
   }
   
   useEffect(() => {

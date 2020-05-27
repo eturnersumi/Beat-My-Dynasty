@@ -11,6 +11,7 @@ function Profiler() {
 
   const [photo, setPhoto] = useState();
   const [url, setURL] = useState("");
+
   var userObj={};
   userObj = JSON.parse(localStorage.getItem("userData"))
   if (!userObj) {
@@ -18,6 +19,7 @@ function Profiler() {
   }
   let userName = userObj.username;
   let favTeam = userObj.favoriteTeam;
+  let profilePic = userObj.profileImage;
 
   console.log("this is your username: ", userName)
   console.log("this is your fav team: ", favTeam)
@@ -37,11 +39,20 @@ function Profiler() {
           console.log("this is the file: ", file);
           //setPhoto({ photo: file });
           setPhoto(file)
+          storage(file);
         }
       }
     );
     widget.open();
   };
+  function storage(file) {
+    var userObj1 = {
+      "username": userName,
+      "favoriteTeam": favTeam,
+      "profileImage": file
+    }
+    localStorage.setItem("userData", JSON.stringify(userObj1))
+  }
   
   return(
     <div className="profileWrapper">
@@ -55,7 +66,7 @@ function Profiler() {
 
         <img 
         className="profileImg" 
-        src={photo} 
+        src={userObj.profileImage ? profilePic : photo} 
         >
         
         </img>
@@ -64,7 +75,7 @@ function Profiler() {
       </Col>
       
       <Col>
-        <h3 id="welcome">Welcome {userObj ? favTeam : "basketball"} fan!</h3>
+        <h3 id="welcome">Welcome {userObj.favoriteTeam ? favTeam : "basketball"} fan!</h3>
         <p>
           Customize your profile and connect with your friends!
         </p>

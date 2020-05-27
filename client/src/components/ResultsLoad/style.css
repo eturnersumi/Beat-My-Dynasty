@@ -10,25 +10,48 @@
   width: 100%;
   margin-left: 0px;
 }
+#tieHead {
+  font-size: 60px;
+  text-align: center;
+  color: red;
+  text-shadow: 0 0 5px black;
+}
 #winner {
+  font-size: 60px;
   outline: 4px dotted #02610f;
   background-color: green;
   animation: shake 0.5s;
 }
 #loser {
+  font-size: 60px;
   outline: 4px dotted red;
   background-color: red;
 }
 #winTeam {
-  font-size: 30px;
+  font-size: 35px;
   text-shadow: 0 0 4px #02610f;
 }
 #loseTeam {
-  font-size: 30px;
+  font-size: 35px;
   text-shadow: 0 0 4px #FF0000;
 }
-#players {
+#players, #boxscore {
   list-style: none;
+  font-size: 20px;
+  text-shadow: 0 0 8px black;
+  font-weight: bold;
+}
+#lineup {
+  font-size: 30px;
+}
+#scoreHead {
+  font-size: 20px;
+}
+#finalScore {
+  font-weight: bold;;
+  background-color: #fdffc4;
+  color: black;
+  text-shadow: none;
 }
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
