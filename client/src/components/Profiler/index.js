@@ -84,10 +84,12 @@ function Profiler() {
         
         <label htmlFor="bio"><b>--Bio--</b></label>
         <br />
+        <form>
         <textarea placeholder="Tell us about yourself" name="bio"/>
         <button type="submit" className="save">
           Save
         </button>
+        </form>
         </p>
       </Col>
     </Row>
