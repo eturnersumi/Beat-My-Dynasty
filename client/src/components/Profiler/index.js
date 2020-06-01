@@ -80,7 +80,7 @@ function Profiler() {
         <p>
           Customize your profile and connect with your friends!
         </p>
-        <p>
+        
         
         <label htmlFor="bio"><b>--Bio--</b></label>
         <br />
@@ -90,7 +90,7 @@ function Profiler() {
           Save
         </button>
         </form>
-        </p>
+        
       </Col>
     </Row>
   </Container>
