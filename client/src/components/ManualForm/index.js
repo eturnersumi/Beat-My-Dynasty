@@ -32,12 +32,12 @@ function ManualForm() {
  }
 
  useEffect(() => {
-console.log("1: ", chosenTeamOne)
+//console.log("1: ", chosenTeamOne)
   teamHandler(chosenTeamOne)
 }, [chosenTeamOne])
 
 useEffect(() => {
-  console.log("2: ", chosenTeamTwo)
+  //console.log("2: ", chosenTeamTwo)
   teamHandler(chosenTeamTwo)
   }, [chosenTeamTwo])
 
@@ -52,19 +52,19 @@ useEffect(() => {
       console.log("TEAM HANDLER SKIPPED")
       return;
     }
-    console.log("team handler function: ", "#1", pick1, "#2", pick2)
-    console.log("team handler function **teams: ", teamList)
+    //console.log("team handler function: ", "#1", pick1, "#2", pick2)
+    //console.log("team handler function **teams: ", teamList)
     
     for (var i=0; i<teamList.length; i+=1) {
       if (teamList[i].team === pick1){
         team1=teamList[i];
-        console.log("***!!!Found team 1", team1)
+        //console.log("***!!!Found team 1", team1)
       }
     }
     for (var j=0; j<teamList.length; j+=1) {
       if (teamList[j].team === pick2) {
         team2=teamList[j];
-        console.log("***!!!Found team 2: ", team2)
+        //console.log("***!!!Found team 2: ", team2)
       }
     }
     calculateWinner(team1, team2);
@@ -91,89 +91,89 @@ useEffect(() => {
       if (stats1.points > stats1.opponentPoints) {
         team1Score+= stats1.points - stats1.opponentPoints;
         team1half=team1Score;
-        console.log("+ team1 oppPt difference", team1Score)
+        //console.log("+ team1 oppPt difference", team1Score)
       }
       if (stats2.points > stats2.opponentPoints) {
         team2Score+= stats2.points - stats2.opponentPoints;
         team2half=team2Score;
-        console.log("+ team2 oppPt difference", team2Score)
+        //console.log("+ team2 oppPt difference", team2Score)
       }
       if (stats1.assists > stats2.assists) {
         team1Score+=3;
         team2Score+=1;
-        console.log("Assists-team1 vs team2", team1Score, team2Score)
+        //console.log("Assists-team1 vs team2", team1Score, team2Score)
       }
       else if (stats2.assists > stats1.assists) {
         team2Score+=3;
         team1Score+=1;
-        console.log("Assists-team1 vs team2", team1Score, team2Score)
+        //console.log("Assists-team1 vs team2", team1Score, team2Score)
       }
       team1Score+=stats1.steals;
       team2Score+=stats2.steals;
-      console.log("Steals-team1 vs team2", team1Score, team2Score)
+      //console.log("Steals-team1 vs team2", team1Score, team2Score)
       if (stats1.fgPercentage > stats2.fgPercentage) {
         team1Score+=3;
         team2Score+=1;
-        console.log("fg%-team1 vs team2", team1Score, team2Score)
+        //console.log("fg%-team1 vs team2", team1Score, team2Score)
       }
       else if (stats2.fgPercentage > stats1.fgPercentage) {
         team2Score+=3;
         team1Score+=1;
-        console.log("fg%-team1 vs team2", team1Score, team2Score)
+        //console.log("fg%-team1 vs team2", team1Score, team2Score)
       }
       if (stats1.threePtPercentage > stats2.threePtPercentage) {
         team1Score+=3;
         team2Score+=1;
-        console.log("3pt%-team1 vs team2", team1Score, team2Score)
+        //console.log("3pt%-team1 vs team2", team1Score, team2Score)
       }
       else if (stats2.threePtPercentage > stats1.threePtPercentage) {
         team2Score+=3;
         team1Score+=1;
-        console.log("3pt%-team1 vs team2", team1Score, team2Score)
+        //console.log("3pt%-team1 vs team2", team1Score, team2Score)
       }
       if (stats1.ftPercentage > stats2.ftPercentage) {
         team1Score+=3;
         team2Score+=1;
-        console.log("FT%-team1 vs team2", team1Score, team2Score)
+        //console.log("FT%-team1 vs team2", team1Score, team2Score)
       }
       else if (stats2.ftPercentage > stats1.ftPercentage) {
         team2Score+=3;
         team1Score+=1;
-        console.log("FT%-team1 vs team2", team1Score, team2Score)
+        //console.log("FT%-team1 vs team2", team1Score, team2Score)
       }
       team1Score+= stats1.blocks;
       team2Score+= stats2.blocks;
-      console.log("blocks-team1 vs team2", team1Score, team2Score)
+      //console.log("blocks-team1 vs team2", team1Score, team2Score)
 
       team1Score-= stats1.turnovers;
       team2Score-= stats2.turnovers;
-      console.log("turnovers-team1 vs team2", team1Score, team2Score)
+      //console.log("turnovers-team1 vs team2", team1Score, team2Score)
 
       team1Score+= stats1.rebounds;
       team2Score+= stats2.rebounds;
-      console.log("rebounds-team1 vs team2", team1Score, team2Score)
+      //console.log("rebounds-team1 vs team2", team1Score, team2Score)
 
       if (stats1.offenseRating > stats2.offenseRating) {
         team1Score+=3;
         team1Score+=1;
-        console.log("offRating-team1 vs team2", team1Score, team2Score)
+        //console.log("offRating-team1 vs team2", team1Score, team2Score)
       }
       else if (stats2.offenseRating > stats1.offenseRating) {
         team2Score+=5;
         team1Score+=1;
-        console.log("offRating-team1 vs team2", team1Score, team2Score)
+        //console.log("offRating-team1 vs team2", team1Score, team2Score)
       }
       if (stats1.defenseRating < stats2.defenseRating) {
         team2Score-=5;
-        console.log("defRating-team1 vs team2", team1Score, team2Score)
+        //console.log("defRating-team1 vs team2", team1Score, team2Score)
       }
       else if (stats2.defenseRating < stats1.defenseRating) {
         team1Score-=5;
-        console.log("defRating-team1 vs team2", team1Score, team2Score)
+        //console.log("defRating-team1 vs team2", team1Score, team2Score)
       }
       team1Score-= stats2.opponentTurnoversPG;
       team2Score-= stats1.opponentTurnoversPG;
-      console.log("oppTOs-team1 vs team2", team1Score, team2Score)
+      //console.log("oppTOs-team1 vs team2", team1Score, team2Score)
 
 
 
@@ -204,7 +204,7 @@ useEffect(() => {
         "team1HalfScore": team1half,
         "team2HalfScore": team2half
       };
-      console.log("this is the object: ", obj)
+      //console.log("this is the object: ", obj)
       storage(obj);
   }
   }

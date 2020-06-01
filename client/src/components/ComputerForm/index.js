@@ -27,11 +27,11 @@ let teamExport;
   }
 
   useEffect(() => {
-    console.log("team #1: ", teamOne)
+    //console.log("team #1: ", teamOne)
   }, [teams,teamOne]);
 
   useEffect(() => {
-    console.log("team #2 ", teamTwo)
+    //console.log("team #2 ", teamTwo)
   }, [teams, teamTwo]);
 
   function generateTeams(e) {
@@ -62,89 +62,89 @@ let teamExport;
       if (stats1.points > stats1.opponentPoints) {
         team1Score+= stats1.points - stats1.opponentPoints;
         team1half=team1Score;
-        console.log("+ team1 oppPt difference", team1Score)
+        //console.log("+ team1 oppPt difference", team1Score)
       }
       if (stats2.points > stats2.opponentPoints) {
         team2Score+= stats2.points - stats2.opponentPoints;
         team2half=team2Score;
-        console.log("+ team2 oppPt difference", team2Score)
+        //console.log("+ team2 oppPt difference", team2Score)
       }
       if (stats1.assists > stats2.assists) {
         team1Score+=3;
         team2Score+=1;
-        console.log("Assists-team1 vs team2", team1Score, team2Score)
+        //console.log("Assists-team1 vs team2", team1Score, team2Score)
       }
       else if (stats2.assists > stats1.assists) {
         team2Score+=3;
         team1Score+=1;
-        console.log("Assists-team1 vs team2", team1Score, team2Score)
+        //console.log("Assists-team1 vs team2", team1Score, team2Score)
       }
       team1Score+=stats1.steals;
       team2Score+=stats2.steals;
-      console.log("Steals-team1 vs team2", team1Score, team2Score)
+      //console.log("Steals-team1 vs team2", team1Score, team2Score)
       if (stats1.fgPercentage > stats2.fgPercentage) {
         team1Score+=3;
         team2Score+=1;
-        console.log("fg%-team1 vs team2", team1Score, team2Score)
+        //console.log("fg%-team1 vs team2", team1Score, team2Score)
       }
       else if (stats2.fgPercentage > stats1.fgPercentage) {
         team2Score+=3;
         team1Score+=1;
-        console.log("fg%-team1 vs team2", team1Score, team2Score)
+        //console.log("fg%-team1 vs team2", team1Score, team2Score)
       }
       if (stats1.threePtPercentage > stats2.threePtPercentage) {
         team1Score+=3;
         team2Score+=1;
-        console.log("3pt%-team1 vs team2", team1Score, team2Score)
+        //console.log("3pt%-team1 vs team2", team1Score, team2Score)
       }
       else if (stats2.threePtPercentage > stats1.threePtPercentage) {
         team2Score+=3;
         team1Score+=1;
-        console.log("3pt%-team1 vs team2", team1Score, team2Score)
+        //console.log("3pt%-team1 vs team2", team1Score, team2Score)
       }
       if (stats1.ftPercentage > stats2.ftPercentage) {
         team1Score+=3;
         team2Score+=1;
-        console.log("FT%-team1 vs team2", team1Score, team2Score)
+        //console.log("FT%-team1 vs team2", team1Score, team2Score)
       }
       else if (stats2.ftPercentage > stats1.ftPercentage) {
         team2Score+=3;
         team1Score+=1;
-        console.log("FT%-team1 vs team2", team1Score, team2Score)
+        //console.log("FT%-team1 vs team2", team1Score, team2Score)
       }
       team1Score+= stats1.blocks;
       team2Score+= stats2.blocks;
-      console.log("blocks-team1 vs team2", team1Score, team2Score)
+      //console.log("blocks-team1 vs team2", team1Score, team2Score)
 
       team1Score-= stats1.turnovers;
       team2Score-= stats2.turnovers;
-      console.log("turnovers-team1 vs team2", team1Score, team2Score)
+      //console.log("turnovers-team1 vs team2", team1Score, team2Score)
 
       team1Score+= stats1.rebounds;
       team2Score+= stats2.rebounds;
-      console.log("rebounds-team1 vs team2", team1Score, team2Score)
+      //console.log("rebounds-team1 vs team2", team1Score, team2Score)
 
       if (stats1.offenseRating > stats2.offenseRating) {
         team1Score+=3;
         team1Score+=1;
-        console.log("offRating-team1 vs team2", team1Score, team2Score)
+        //console.log("offRating-team1 vs team2", team1Score, team2Score)
       }
       else if (stats2.offenseRating > stats1.offenseRating) {
         team2Score+=5;
         team1Score+=1;
-        console.log("offRating-team1 vs team2", team1Score, team2Score)
+        //console.log("offRating-team1 vs team2", team1Score, team2Score)
       }
       if (stats1.defenseRating < stats2.defenseRating) {
         team2Score-=5;
-        console.log("defRating-team1 vs team2", team1Score, team2Score)
+        //console.log("defRating-team1 vs team2", team1Score, team2Score)
       }
       else if (stats2.defenseRating < stats1.defenseRating) {
         team1Score-=5;
-        console.log("defRating-team1 vs team2", team1Score, team2Score)
+        //console.log("defRating-team1 vs team2", team1Score, team2Score)
       }
       team1Score-= stats2.opponentTurnoversPG;
       team2Score-= stats1.opponentTurnoversPG;
-      console.log("oppTOs-team1 vs team2", team1Score, team2Score)
+      //console.log("oppTOs-team1 vs team2", team1Score, team2Score)
 
 
 

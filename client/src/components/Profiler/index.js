@@ -22,8 +22,8 @@ function Profiler() {
   let favTeam = userObj.favoriteTeam;
   let profilePic = userObj.profileImage;
 
-  console.log("this is your username: ", userName)
-  console.log("this is your fav team: ", favTeam)
+  //console.log("this is your username: ", userName)
+  //console.log("this is your fav team: ", favTeam)
   
 
   function showWidget() {
@@ -37,7 +37,7 @@ function Profiler() {
         if (result.event === "success") {
         
           const file = result.info.url; 
-          console.log("this is the file: ", file);
+          //console.log("this is the file: ", file);
           //setPhoto({ photo: file });
           setPhoto(file)
           storage(file);

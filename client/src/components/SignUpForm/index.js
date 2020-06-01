@@ -15,8 +15,8 @@ function SignUpForm() {
   }
   
   useEffect(() => {
-    console.log("this is the username: ", userName)
-    console.log("this is the fav team: ", favTeam)
+    //console.log("this is the username: ", userName)
+    //console.log("this is the fav team: ", favTeam)
     storage(userObj)
   })
   function storage(userObj) {

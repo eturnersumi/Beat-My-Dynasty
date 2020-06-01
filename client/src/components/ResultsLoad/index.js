@@ -62,7 +62,7 @@ else {
 
 
 //team1Players.push(resultsObj.team1.players[0])
-console.log("this is the results object: ", resultsObj)
+//console.log("this is the results object: ", resultsObj)
 
 
   return(
