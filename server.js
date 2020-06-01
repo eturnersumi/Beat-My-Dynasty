@@ -19,7 +19,10 @@ app.use(routes);
 
 // Connect to the Mongo DB
 //mongoose.connect(process.env.MONGODB_URI);
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/team");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/team", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
 
 
 // Start the API server
