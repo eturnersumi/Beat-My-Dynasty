@@ -25,4 +25,8 @@
   }
 }
 
-background-color: #eb0707;
+@media screen and (max-width: 400px) {
+  #signup, #signin, .nav-link {
+    font-size: 20px;
+  }
+}

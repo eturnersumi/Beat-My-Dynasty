@@ -41,3 +41,27 @@
   font-size: 40px;
   text-shadow: 2px 2px red;
 }
+
+@media screen and (max-width: 400px) {
+  #yours, #opponent {
+    font-size: 25px;
+  }
+  h2 {
+    font-size: 25px;
+    padding-left: 10px;
+  }
+  #teamOne, #teamTwo {
+    font-size: 15px;
+  }
+  .compWrapper {
+    margin-top: 10px;
+    width: 98%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .pick, #play {
+    
+    font-size: 25px;
+    
+  }
+}

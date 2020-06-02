@@ -51,3 +51,19 @@
 #picks1 {
   
 }
+
+@media screen and (max-width: 400px) {
+  #teahead {
+    padding: none;
+    font-size: 20px;
+  }
+  .pickOne, .pickTwo {
+    font-size: 12px;
+  }
+  #manual {
+    padding-left: 10%;
+  }
+  #manPlay {
+    width: 75%;
+  }
+}
