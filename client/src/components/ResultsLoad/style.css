@@ -79,7 +79,7 @@
     font-size: 12px;
     font-weight: normal;
   }
-  #team {
+  #team, #winner, #loser, #winTeam, #loseTeam {
     font-size: 15px;
   }
   .resultWrapper {

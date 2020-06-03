@@ -53,6 +53,20 @@ function SignUpForm() {
 
     <div className="clearfix">
     <button 
+    type="submit" 
+    className="signupbtn"
+    >
+    <Link
+      to= "/profile"
+      className={window.location.pathname === "/profile"
+      ? "nav-link active"
+      : "nav-link"
+      }
+      >
+      Sign Up
+    </Link>
+    </button>
+    <button 
     type="button" 
     className="cancelbtn">
     <Link
@@ -65,20 +79,7 @@ function SignUpForm() {
     Cancel
     </Link>
     </button>
-      <button 
-      type="submit" 
-      className="signupbtn"
-      >
-      <Link
-        to= "/profile"
-        className={window.location.pathname === "/profile"
-        ? "nav-link active"
-        : "nav-link"
-        }
-        >
-        Sign Up
-      </Link>
-      </button>
+     
       
     </div>
   </div>
