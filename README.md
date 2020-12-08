@@ -6,3 +6,11 @@ Do you find yourself debating the best NBA team to step foot on a court? Have yo
 
 ## &#128172;About the app
 This web application allows you to pick two dynasties to battle against one another. If you're unsure of which teams to pick, you can allow the computer to generate two teams to compete against one another. 
+
+
+**Needed environment
+-Web application, runs in browser. 
+**Needed libraries or resources
+-Required libraries located in package.json
+**Process to run it.
+-If running locally, "node server.js" is used to initiate launch of application
